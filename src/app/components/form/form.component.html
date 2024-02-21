@@ -1,0 +1,30 @@
+<form (submit)="calcular($event)" [formGroup]="form" class="container">
+  <div class="mb-3">
+    <label for="valora" class="form-label">Valor A: </label>
+    <input
+      type="text"
+      class="form-control"
+      id="valora"
+      formControlName="valora"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="valorb" class="form-label">Valor B: </label>
+    <input
+      type="text"
+      class="form-control"
+      id="valorb"
+      formControlName="valorb"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="result" class="form-label">Result: </label>
+    <input
+      type="text"
+      class="form-control"
+      id="result"
+      formControlName="result"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Sumar</button>
+</form>

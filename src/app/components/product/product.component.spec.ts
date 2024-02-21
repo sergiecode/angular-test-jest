@@ -10,10 +10,9 @@ describe('ProductComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientModule],
-      declarations: [ProductComponent]
-    })
-    .compileComponents();
-    
+      declarations: [ProductComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(ProductComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
