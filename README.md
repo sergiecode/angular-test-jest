@@ -1,27 +1,33 @@
-# AngularTest
+# Angular Test with Jest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+1. npm remove karma-jasmine-html-reporter karma-jasmine karma-coverage karma-chrome-launcher karma jasmine-core
+2. npm install --save-dev jest jest-preset-angular @types/jest
+3. Crear setup-jest.ts y ponerle la siguiente línea `import 'jest-preset-angular/setup-jest';`
+4. Agregar en el package.json:
 
-## Development server
+```
+"jest": {
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": [
+      "<rootDir>/setup-jest.ts"
+    ],
+    "globalSetup": "jest-preset-angular/global-setup"
+  }
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+5. Agregar en el tsconfig.json y tsconfig.spec.json
 
-## Code scaffolding
+```
+"types": [
+  "jest",
+  "mocha",
+  "jasmine"
+]
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+6. Agregar los siguientes scripts:
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+"test": "jest",
+"test:watch": "jest --watchAll",
+```

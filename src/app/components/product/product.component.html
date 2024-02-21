@@ -1,0 +1,12 @@
+<h1>Product</h1>
+@if (!product) {
+    <div>
+        <h2>Loading</h2>
+    </div>
+} @else {
+    <div>
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.description }}</p>
+        <img src="{{product.image}}" width="500px">
+    </div>
+}
